@@ -1,6 +1,10 @@
 # syntax = docker/dockerfile:1.1.1-experimental
 FROM ubuntu:20.04
 
+# If you are in a proxy environment, define the relevant environment variables here.
+# ENV http_proxy http://xxx:0000
+# ENV https_proxy http://xxx:0000
+
 # Avoid to stop docker build
 RUN apt-get update && apt-get -y install tzdata && echo 'Asia/Tokyo' > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
