@@ -40,7 +40,9 @@ RUN apt-get update && apt install -y \
 
 RUN apt install -y \
       curl \
-      language-pack-en
+      language-pack-en \
+      vim \
+      tree
 
 # Avoid /usr/bin/env: `python`: No such file or directory
 RUN ln -s /usr/bin/python3 /usr/bin/python
