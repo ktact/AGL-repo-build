@@ -3,7 +3,7 @@
 $ git clone https://github.com/ktact/AGL-repo-build.git
 $ cd AGL-repo-build
 $ docker build -t agl-build:v1 .
-$ docker run -it agl-build:v1
+$ docker run -v /path/to/host/directory:/path/to/container/directory -u 1000 -it agl-build:v1
 builduser@15309978dcae:~$ PATH=~/bin:$PATH
 builduser@15309978dcae:~$ mkdir ws
 builduser@15309978dcae:~$ cd ws
