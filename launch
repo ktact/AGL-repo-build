@@ -1,0 +1,12 @@
+#!/bin/bash
+
+qemu-system-aarch64 \
+  -M virt -cpu cortex-a57 \
+  -nographic \
+  -kernel build-virtio-aarch64/tmp/deploy/images/virtio-aarch64/Image  \
+  -append console=ttyAMA0 \
+  -drive file=build-virtio-aarch64/tmp/deploy/images/virtio-aarch64/agl-ivi-demo-qt-virtio-aarch64.ext4,if=virtio,format=raw \
+  -append 'root=/dev/vda' -m 2048 \
+  -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+  -device virtio-net-pci,netdev=net0 \
+  -audio driver=pa,model=virtio
