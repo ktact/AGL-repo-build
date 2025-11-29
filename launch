@@ -9,4 +9,5 @@ qemu-system-aarch64 \
   -append 'root=/dev/vda' -m 2048 \
   -netdev user,id=net0,hostfwd=tcp::2222-:22 \
   -device virtio-net-pci,netdev=net0 \
+  -device vhost-vsock-pci,guest-cid=3 \
   -audio driver=pa,model=virtio
